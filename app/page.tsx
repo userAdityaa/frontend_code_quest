@@ -44,6 +44,7 @@ export default function Home() {
               className={`relative bg-[#ecc355] w-[30vw] sm:w-[20vw] md:w-[15vw] lg:w-[10vw] h-full flex items-center justify-center p-2 rounded-lg text-black font-bold gap-2 z-10 ${isPressedButton ? 'bulge' : ''}`}
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
+              onClick={() => window.location.href = '/Signin'}  
             >
               Start Coding
             </button>
