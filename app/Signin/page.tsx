@@ -1,8 +1,9 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Navbar } from '../components';
 import { Mukta_Mahee } from 'next/font/google';
+import axios from 'axios';
 
 const muktaMahee = Mukta_Mahee({
   weight: ['400', '700'], 
@@ -10,8 +11,13 @@ const muktaMahee = Mukta_Mahee({
 });
 
 const SignIn = () => {
+  const [githubData, setGithubData] = React.useState(null);
   const [isPressedGoogleButton, setIsPressedGoogleButton] = useState(false);
-  const [isPressedGithubButton, setIsPressedGithubButton] = useState(false);
+  const [isPressedGithubButton, setIsPressedGithubButton] = useState(false)
+
+  function handleGithubLogin() { 
+    window.location.href = 'http://localhost:8080/login/github/'
+  }
 
   return (
     <div className={`${muktaMahee.className} text-white`}>
@@ -40,6 +46,7 @@ const SignIn = () => {
               className={`relative bg-[#412487] w-auto h-auto flex items-center justify-center px-14 py-2 rounded-lg text-white font-bold gap-2 z-10 ${isPressedGithubButton ? 'bulge' : ''}`}
               onMouseDown={() => setIsPressedGithubButton(true)}
               onMouseUp={() => setIsPressedGithubButton(false)}
+              onClick={handleGithubLogin}
             >
               <Image src='/github.svg' alt='GitHub logo' width={18} height={24} className='mr-2' />
               Sign in with GitHub
