@@ -51,34 +51,58 @@ const Questions = () => {
               </div>
             </div>
           </div>
-          <div className='text-white font-bold text-[20px]'>
+          <div className='text-white font-bold text-[20px] mt-6'>
             Started Questions
           </div>
-
-          {/* <div className='mt-4 mb-4 w-[80%] flex items-center'>
-            <div className='relative'>
-              <input type="text" className='text-white rounded-lg bg-[#454545] pl-2 p-1 pr-20 outline-none w-full' placeholder='Search questions'/>
-              <div className='absolute right-2 top-1/2 transform -translate-y-1/2'>
-                <Image src="/search_logo.svg" alt="Search" width={20} height={20} />
-              </div>
-            </div> */}
-
-            <div className='mt-4 mb-4 w-[80%] flex items-center'>
-              <div className='relative'>
-                <input type="text" className='text-white rounded-lg bg-[#454545] pl-2 p-1 pr-20 outline-none w-full' placeholder='Search questions'/>
-                <div className='absolute right-2 top-1/2 transform -translate-y-1/2'>
+            <div className='mt-4  w-[85%] flex items-center'>
+              <div className='relative w-full'>
+                <div className='absolute bg-black w-full h-full rounded-lg top-[0.25rem] left-0 z-0'></div>
+                <input 
+                  type="text" 
+                  className='relative text-white rounded-lg bg-[#454545] pl-2 p-1 pr-20 outline-none w-full z-10' 
+                  placeholder='Search questions'
+                />
+                <div className='absolute right-2 top-1/2 transform -translate-y-1/2 z-10'>
                   <Image src="/search_logo.svg" alt="Search" width={20} height={20} />
                 </div>
               </div>
-              <select className='ml-4 text-white font-bold rounded-lg bg-[#454545] pl-2 p-[0.35rem] outline-none pr-6' defaultValue="">
-                <option value="" disabled>Difficulty</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-              </select>
+              <div className='relative w-full ml-4'>
+                <div className='absolute bg-black w-full h-full rounded-lg top-[0.25rem] left-0 z-0'></div>
+                <select className='relative text-white font-semibold rounded-lg bg-[#454545] pl-2 p-[0.35rem] outline-none pr-28 w-full z-10' defaultValue="">
+                  <option value="" disabled>Difficulty</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+              <div className='relative w-full ml-4'>
+                <div className='absolute bg-black w-full h-full rounded-lg top-[0.25rem] left-0 z-0'></div>
+                <select className='relative text-white font-semibold rounded-lg bg-[#454545] pl-2 p-[0.35rem] outline-none pr-48 w-full z-10' defaultValue="">
+                  <option value="" disabled>Tags</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
             </div>
-
-          <ProblemList currentPage={0}/>
+            <div className='flex items-center w-[40%] mt-4'>
+              <div className='relative w-[60%] mb-7'>
+                <div className='absolute bg-black w-full h-full rounded-lg top-[0.25rem] left-0 z-0'></div>
+                <select className='relative text-white font-semibold rounded-lg bg-[#454545] pl-2 p-[0.35rem] outline-none pr-2 w-full z-10' defaultValue="">
+                  <option value="" disabled>Tags</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+              <div className='relative w-[15%] ml-4 mb-7'>
+                <div className='absolute bg-black w-full h-full rounded-lg top-[0.25rem] left-0 z-0'></div>
+                <button className='relative bg-[#454545] w-full h-full flex items-center justify-center py-[0.35rem] rounded-lg px-4 z-10'>
+                  <Image src='/random.svg' alt='random icon' height={30} width={18} className='object-contain' />
+                </button>
+              </div>
+            </div>
+          <ProblemList currentPage={1}/>
         </div>
 
         <div className='border border-white fixed right-24 h-[40%] w-[25%]'></div>
