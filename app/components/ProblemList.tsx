@@ -49,6 +49,7 @@ const ProblemList = ({ currentPage }: ProblemListProps) => {
 
     const startIndex = (currentPage - 1) * problemsPerPage;
     const currentProblems = problems.slice(startIndex, startIndex + problemsPerPage);
+    const colors = ['#2980b9', '#e15d34', '#27ae60', '#f39c12', '#5c9f51', '#6265d0'];
 
     return (
         <div className={`w-[55vw] h-auto flex flex-col gap-3`}>
@@ -66,7 +67,7 @@ const ProblemList = ({ currentPage }: ProblemListProps) => {
                             <p className='font-semibold text-white'>{startIndex + index + 1}. {problem.title}</p>
                             <div className='flex flex-wrap gap-1'>
                                 {problem.topicTags.map((tag, tagIndex) => (
-                                    <span key={tagIndex} className='bg-gray-700 rounded px-2 py-1'>{tag}</span>
+                                    <span key={tagIndex} className='bg-gray-700 rounded px-2 py-1' style={{ backgroundColor: colors[tagIndex % colors.length] }}>{tag}</span>
                                 ))}
                             </div>
                         </button>
