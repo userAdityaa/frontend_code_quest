@@ -5,17 +5,24 @@ import { Navbar, ProblemList } from '../components'
 import axios from 'axios'
 import { Mukta_Mahee } from 'next/font/google'
 import Image from 'next/image'
+import Pagination from '../utils/Pagination'
 
 const muktaMahee = Mukta_Mahee({
   weight: ['400', '700'], 
   subsets: ['latin'], 
 });
 
+const changePage = (page: number) => { 
+
+}
+
 const Questions = () => {
   const searchParams = useSearchParams(); 
   const username = searchParams.get('username')
   const avatar_url = searchParams.get('avatar_url')
   const token = searchParams.get('code')
+  const page = parseInt(searchParams.get('page') || '1', 10);
+  console.log(page);
   
   return (
     <div className={`${muktaMahee}`}>
@@ -102,11 +109,14 @@ const Questions = () => {
                 </button>
               </div>
             </div>
-          <ProblemList currentPage={1}/>
+          <div className='flex flex-col gap-14'>
+            <ProblemList currentPage={page}/>
+            <Pagination/>
+          </div>
         </div>
-
         <div className='border border-white fixed right-24 h-[40%] w-[25%]'></div>
       </div>
+      
     </div>
   );
 }
