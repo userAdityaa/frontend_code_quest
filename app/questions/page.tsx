@@ -12,9 +12,6 @@ const muktaMahee = Mukta_Mahee({
   subsets: ['latin'], 
 });
 
-const changePage = (page: number) => { 
-
-}
 
 const Questions = () => {
   const searchParams = useSearchParams(); 
@@ -114,9 +111,38 @@ const Questions = () => {
             <Pagination/>
           </div>
         </div>
-        <div className='border border-white fixed right-24 h-[40%] w-[25%]'></div>
+        
+        <div className='fixed right-8 h-[85%] w-[30%] top-24 rounded-xl bg-[#2c2c2e] overflow-y-scroll custom-scrollbar'>
+          <div className='absolute left-8 h-[15%] w-[25%] top-20 rounded-full bg-[#715ed3] flex items-start justify-center'>
+            <Image src='/week_avatar.svg' alt='week avatar' height={50} width={50} className='border-zinc-100 animate-bounce' style={{ marginTop: '-40px' }} />
+            <span className='absolute bottom-[-30px] text-white font-semibold uppercase'>week 1</span>
+          </div>
+
+          <div className='absolute right-8 h-[15%] w-[25%] top-36 rounded-full bg-[#715ed3] flex items-center justify-center'>
+          <span className='absolute bottom-[-30px] text-white font-semibold uppercase'>week 2</span>
+          </div>
+
+          <div className='absolute left-12 h-[15%] w-[25%] top-64 rounded-full bg-[#715ed3] flex items-center justify-center'>
+          <span className='absolute bottom-[-30px] text-white font-semibold uppercase'>week 3</span>
+          </div>
+
+          <div className='absolute right-24 h-[15%] w-[25%] top-[28rem] rounded-full bg-[#715ed3] flex items-center justify-center'>
+          <span className='absolute bottom-[-30px] text-white font-semibold uppercase'>week 4</span>
+          </div>
+
+          <div className='absolute left-20 h-[15%] w-[25%] top-[38rem] rounded-full bg-[#715ed3] flex items-center justify-center'>
+          <span className='absolute bottom-[-30px] text-white font-semibold uppercase'>week 5</span>
+          </div>
+
+          <div className='absolute right-14 h-[15%] w-[25%] top-[50rem] rounded-full bg-[#715ed3] flex items-center justify-center'>
+          <span className='absolute bottom-[-30px] text-white font-semibold uppercase'>week 6</span>
+          </div>
+
+          <div className='absolute left-14 h-[15%] w-[25%] top-[60rem] rounded-full bg-[#715ed3] flex items-center justify-center'>
+          <span className='absolute bottom-[-30px] text-white font-semibold uppercase'>week 7</span>
+          </div>
+        </div>
       </div>
-      
     </div>
   );
 }
